@@ -1,0 +1,39 @@
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzE1NzY5MzksInN1YiI6IjE1NDg3MjAzLTc4MTEtNDA0My05NzFhLWE3NjU1OTc5MjljZSJ9.OuJpI8zw5iIhxUhe1WtSeOezSedU9gejQiZBh6Y8d-c
+
+POST http://localhost:8080/products HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "Laptop",
+  "description": "Macbook M1",
+  "price": 1100.00
+}
+
+###
+
+GET http://localhost:8080/products/6bd478eb-0f9e-4c06-a71b-514a222c83a0 HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+
+GET http://localhost:8080/products HTTP/1.1
+Authorization: Bearer {{token}}
+
+###
+
+PUT http://localhost:8080/products/6bd478eb-0f9e-4c06-a71b-514a222c83a0 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "Cellphone",
+  "description": "iPhone 16",
+  "price": 900.00
+}
+
+###
+
+DELETE http://localhost:8080/products/6bd478eb-0f9e-4c06-a71b-514a222c83a0 HTTP/1.1
+Authorization: Bearer {{token}}
